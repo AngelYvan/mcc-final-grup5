@@ -159,7 +159,6 @@ Las comunicaciones DICOM se adaptan al estándar OSI para el intercambio de info
 
 Gracias a sus características y a su nivel de implantación, hoy día DICOM es mundialmente reconocido para el manejo, almacenamiento, impresión y transmisión de imágenes médicas.
 
-
 \subsection{Importancia de la Escala Hounsfield}
 La escala de Unidades Hounsfield (símbolo HU del inglés ‘Hounsfield Units’) es el resultado de la transformación de la escala de coeficientes de atenuación lineal de rayos X en una nueva escala en la cual el valor de atenuación del agua destilada en Condiciones Normales de Presión y Temperatura (CNPT) se define como 0 unidades de Hounsfield (HU).
 
@@ -193,9 +192,29 @@ Pulmón & -950 hasta -550\\ \hline
 \end{center}
 \end{table}
 
+
 \section{Metodologia y Desarrollo}
 
 \subsection{Preparación del entorno de desarrollo}
+
+
+\begin{itemize}
+            \item Software MITK:
+\end{itemize}
+
+MITK es un programa de software libre empleado para el análisis de imágenes médicas de
+tomografía computerizada. Este programa trabaja con archivos DICOM (Digital Imaging and
+Communication in Medicine) que es el formato estándar para el procesamiento de este tipo de
+imágenes. En ella se puede encontrar versiones actualizadas del programa así como un manual para el usuario con explicaciones de las herramientas de las que dispone y otro manual para desarrolladores.
+
+En el diseño del código se ha trabajado contando con las librerías “Medical Imaging Interaction Toolkit (MITK) debido a la facididad para el manejo de las imagenes en formatp DIVOM que se están utilizando.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{img/MITK.jpg}
+\caption{Software MITK}
+\end{figure}
+
 \subsection{Procesamiento de la Imagen}
 \subsection{Utilizando el Algoritmo Quadtree}
 \subsection{Output: Detectando las patologias}
