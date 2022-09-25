@@ -1,4 +1,4 @@
-## Universidad Nacional de San Agustín <br/> Maestría en Ciencia de la Computación <br/>  Algoritmos y Estructura de Datos
+## Universidad Nacional de San Agustín <br/> Facultad de Producción de Bienes y Servicios<br/>  Maestría en Ciencia de la Computación 
 <hr/>
 
 
