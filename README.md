@@ -1,4 +1,4 @@
-## Universidad Nacional de San Agustín <br/> Facultad de Producción de Bienes y Servicios<br/>  Maestría en Ciencia de la Computación 
+## Universidad Nacional de San Agustín <br/> Facultad de Producción  y Servicios<br/>  Maestría en Ciencia de la Computación 
 <hr/>
 
 
