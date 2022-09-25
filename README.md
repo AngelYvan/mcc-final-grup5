@@ -2,7 +2,7 @@
 <hr/>
 
 
-# Proyecto final de Curso
+##Proyecto final de Curso
 
 | DOCENTE DEL CURSO | MAESTRIA | CURSO |
 | :-: | :-: | :-: |
