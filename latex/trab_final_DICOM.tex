@@ -160,6 +160,39 @@ Las comunicaciones DICOM se adaptan al estándar OSI para el intercambio de info
 Gracias a sus características y a su nivel de implantación, hoy día DICOM es mundialmente reconocido para el manejo, almacenamiento, impresión y transmisión de imágenes médicas.
 
 
+\subsection{Importancia de la Escala Hounsfield}
+La escala de Unidades Hounsfield (símbolo HU del inglés ‘Hounsfield Units’) es el resultado de la transformación de la escala de coeficientes de atenuación lineal de rayos X en una nueva escala en la cual el valor de atenuación del agua destilada en Condiciones Normales de Presión y Temperatura (CNPT) se define como 0 unidades de Hounsfield (HU).
+
+En la tomografía computarizada se hace uso de una escala para determinar la densidad de los
+tejidos, esta es la escala de unidades Hunsfield(UH), que mediante la atenuación de rayos X se
+puede terminar rangos entre -1000 a +1000, cuyos valores dependerá del tejido en cuestión siendo
+-1000 un valor dado para la radiosensibilidad del aire , 0 para el agua destilada y +1000 para
+tejidos óseos.
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{| c | c |}
+\hline
+TIPO DE TEJIDO & HU \\ \hline
+Hueso compacto & > 250 \\
+Hueso esponjoso & 50-300 \\
+Sangre coagulada & 70-90 \\
+Tiroides & 60-80\\
+Hígado & 50-70\\
+Sangre entera & 50-60\\
+Sustancia gris & 37-41\\
+Músculo & 35-50\\
+Páncreas & 30-50\\
+Riñón & 20-40\\
+Sustancia blanca & 20-34\\
+Plasma & 27 ± 2\\
+LCR & 5-10\\
+Grasa & -80 hasta -100\\
+Pulmón & -950 hasta -550\\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
 \section{Metodologia y Desarrollo}
 
 \subsection{Preparación del entorno de desarrollo}
