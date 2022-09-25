@@ -6,7 +6,7 @@
 
 | DOCENTE DEL CURSO | MAESTRIA | CURSO |
 | :-: | :-: | :-: |
-| PhD. Vicente Machaca Arceda | Maestría en Ciencia de la Computación | Algoritmos y Estructura de Datos |
+| MSc. Vicente Machaca Arceda | Maestría en Ciencia de la Computación | Algoritmos y Estructura de Datos |
 <br/>
 
 ## Tema:
