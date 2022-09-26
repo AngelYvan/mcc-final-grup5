@@ -219,6 +219,11 @@ Pulmón & -950 hasta -550\\ \hline
 \subsection{Libreria Pydicom}
 pydicom es un paquete de Python puro para trabajar con archivos DICOM. Le permite leer, modificar y escribir datos DICOM de una manera fácil y "pitónica".
 Como un paquete de Python puro, pydicom puede ejecutarse en cualquier lugar donde se ejecute Python sin ningún otro requisito, aunque si está trabajando con Pixel Data, le recomendamos que también instale NumPy.
+Elementos centrales en pydicom
+modelo de objetos pydicom, descripción de clases, ejemplos
+
+conjunto de datos
+Dataset el objeto principal con el que trabajará directamente. Datasetenvuelve un diccionario, donde la clave es la etiqueta DICOM (como un BaseTagobjeto, que se describe a continuación) y el valor es la DataElementinstancia correspondiente (que también se describe a continuación). Implementa la mayoría de los métodos de dict, por lo que en su mayoría se comporta como un envuelto dict. Esto permite el acceso directo a los elementos de datos a través de sus etiquetas, como se muestra a continuación.
 \subsection{Lenguaje Utilizado}
 \begin{itemize}
 	\item Javascript y librerias:
