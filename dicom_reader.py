@@ -48,5 +48,100 @@ def build_kdtree(points, depth=0):
     }
 
 
+def kdtree_naive_closest_point(root, point, depth=0, best=None):
+    if root is None:
+        return best
 
+    axis = depth % k
+
+    next_best = None
+    next_branch = None
+
+    if best is None or distance_squared(point, best) > distance_squared(point, root['point']):
+        next_best = root['point']
+    else:
+        next_best = best
+
+    if point[axis] < root['point'][axis]:
+        next_branch = root['left']
+    else:
+        next_branch = root['right']
+
+    return kdtree_naive_closest_point(next_branch, point, depth + 1, next_best)
+
+
+def closer_distance(pivot, p1, p2):
+    if p1 is None:
+        return p2
+
+    if p2 is None:
+        return p1
+
+    d1 = distance_squared(pivot, p1)
+    d2 = distance_squared(pivot, p2)
+
+    if d1 < d2:
+        return p1
+    else:
+        return p2
+
+
+def kdtree_closest_point(root, point, depth=0):
+    if root is None:
+        return None
+
+    axis = depth % k
+
+    next_branch = None
+    opposite_branch = None
+
+    if point[axis] < root['point'][axis]:
+        next_branch = root['left']
+        opposite_branch = root['right']
+    else:
+        next_branch = root['right']
+        opposite_branch = root['left']
+
+    best = closer_distance(point,
+                           kdtree_closest_point(next_branch,
+                                                point,
+                                                depth + 1),
+                           root['point'])
+
+    if distance_squared(point, best) > (point[axis] - root['point'][axis]) ** 2:
+        best = closer_distance(point,
+                               kdtree_closest_point(opposite_branch,
+                                                    point,
+                                                    depth + 1),
+                               best)
+
+    return best
+
+# paths to data and save location
+filepath = './data/' # directory containing the dicom series
+dcmprefix = 'I' # Individual dicom file prefix before number
+firstdcm = dcmprefix + '45' # first dicom image to inspect metadata fields
+newdir = './data-edited/' # directory to save new metadata fields
+
+# Find total number of dicom files in series
+j = 0
+for file in os.listdir(filepath):
+    if file.endswith(".DICOM"):
+        j = j + 1
+totaldcm = j 
+
+# Read all tags for first image
+ds = pydicom.filereader.dcmread(filepath+firstdcm)
+print(ds.pixel_array.shape)
+print(ds.pixel_array[200][130])
+imageArray = ds.pixel_array
+
+# mask = np.identity(512)
+plt.imshow(imageArray, cmap=plt.cm.bone)  # set the color map to bone
+plt.show()
+# plt.imshow(mask, cmap='gray')  # set the color map to bone
+# plt.show()
+
+# [200][130]
+# 142
 
