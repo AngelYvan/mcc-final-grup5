@@ -14,3 +14,8 @@
 Aplicacion del algoritmo KDTree en la lectura de imagenes DICOM para detección de patologias en pulmones.
 
 ## Integrantes:
+
+Angel Yvan Choquehuanca Peraltilla
+Estefany Pilar Huaman Colque
+Eduardo Diaz Huayhuas
+Gustavo Raul Manrique Fernandez
