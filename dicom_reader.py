@@ -144,4 +144,20 @@ plt.show()
 
 # [200][130]
 # 142
+mask = np.zeros((512,512))
+myPoints = []
+for x in range(len(imageArray)):
+    for y in range(len(imageArray[x])):
+        if imageArray[x,y] > 20 and imageArray[x,y] < 300:
+            mask[x,y]= 1
+            myPoints.append((x,y))
+plt.imshow(mask, cmap='gray')  # set the color map to bone
+plt.show()
+# print(myPoints)
+kdtree = build_kdtree(myPoints)
+pivot = (250,250)
+found = kdtree_closest_point(kdtree, pivot)
+found_distance = math.sqrt(distance_squared(pivot, found))
+
+print("  Found:    %s (distance: %f)" % (found, found_distance))
 
