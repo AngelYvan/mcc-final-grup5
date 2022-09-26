@@ -15,7 +15,7 @@ Aplicacion del algoritmo KDTree en la lectura de imagenes DICOM para detección 
 
 ## Integrantes:
 
-Angel Yvan Choquehuanca Peraltilla
-Estefany Pilar Huaman Colque
-Eduardo Diaz Huayhuas
-Gustavo Raul Manrique Fernandez
+- Angel Yvan Choquehuanca Peraltilla
+- Estefany Pilar Huaman Colque
+- Eduardo Diaz Huayhuas
+- Gustavo Raul Manrique Fernandez
