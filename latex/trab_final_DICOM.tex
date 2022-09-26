@@ -296,7 +296,7 @@ tomografía computerizada. Este programa trabaja con archivos DICOM (Digital Ima
 Communication in Medicine) que es el formato estándar para el procesamiento de este tipo de
 imágenes. En ella se puede encontrar versiones actualizadas del programa así como un manual para el usuario con explicaciones de las herramientas de las que dispone y otro manual para desarrolladores.
 
-En el diseño del código se ha trabajado contando con las librerías “Medical Imaging Interaction Toolkit (MITK) debido a la facididad para el manejo de las imagenes en formatp DIVOM que se están utilizando.
+En el diseño del código se ha trabajado contando como referencias las librerías “Medical Imaging Interaction Toolkit (MITK) debido a la facididad para el manejo de las imagenes en formatp DICOM,  con la finalidad de ofrecer una mejor interfaz.
 
 \begin{figure}[H]
 \centering
@@ -401,6 +401,66 @@ def kdtree_closest_point(root, point, depth=0):
 
 \subsection{Output: Detectando las patologias}
 
+# paths to data and save location
+filepath = './data/' # directory containing the dicom series
+dcmprefix = 'I' # Individual dicom file prefix before number
+firstdcm = dcmprefix + '12' # first dicom image to inspect metadata fields
+newdir = './data-edited/' # directory to save new metadata fields
+
+# Find total number of dicom files in series
+j = 0
+for file in os.listdir(filepath):
+    if file.endswith(".DICOM"):
+        j = j + 1
+totaldcm = j 
+
+# Read all tags for first image
+ds = pydicom.filereader.dcmread(filepath+firstdcm)
+print(ds.pixel_array.shape)
+print(ds.pixel_array[200][130])
+imageArray = ds.pixel_array
+
+# mask = np.identity(512)
+plt.imshow(imageArray, cmap=plt.cm.bone)  # set the color map to bone
+plt.show()
+
+mask = np.zeros((512,512))
+result = np.zeros((512,512))
+
+myPoints = []
+for x in range(len(imageArray)):
+    for y in range(len(imageArray[x])):
+        if imageArray[x,y] > 20 and imageArray[x,y] < 300:
+            mask[x,y]= 1
+            myPoints.append((x,y))
+plt.imshow(mask, cmap='gray')  # set the color map to bone
+plt.show()
+
+pivot = (256,256)
+
+kdtree = build_kdtree(myPoints)
+found = kdtree_closest_point(kdtree, pivot)
+found_distance = math.sqrt(distance_squared(pivot, found))
+print("  Found:    %s (distance: %f)" % (found, found_distance))
+result[found[0],found[1]] = 1
+
+while found_distance < 35:
+    imageArray[found[0],found[1]] = 0
+    myPoints = []
+    for x in range(len(imageArray)):
+        for y in range(len(imageArray[x])):
+            if imageArray[x,y] > 20 and imageArray[x,y] < 300:
+                myPoints.append((x,y))
+    kdtree = build_kdtree(myPoints)
+    found = kdtree_closest_point(kdtree, pivot)
+    print(found)
+    found_distance = math.sqrt(distance_squared(pivot, found))
+    # print("  Found:    %s (distance: %f)" % (found, found_distance))
+    result[found[0],found[1]] = 1
+
+plt.imshow(result, cmap='gray')  # set the color map to bone
+plt.show()
+\end{lstlisting}
 
 
 
