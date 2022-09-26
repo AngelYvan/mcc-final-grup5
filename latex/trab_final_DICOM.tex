@@ -224,6 +224,7 @@ modelo de objetos pydicom, descripción de clases, ejemplos
 
 conjunto de datos
 Dataset el objeto principal con el que trabajará directamente. Datasetenvuelve un diccionario, donde la clave es la etiqueta DICOM (como un BaseTagobjeto, que se describe a continuación) y el valor es la DataElementinstancia correspondiente (que también se describe a continuación). Implementa la mayoría de los métodos de dict, por lo que en su mayoría se comporta como un envuelto dict. Esto permite el acceso directo a los elementos de datos a través de sus etiquetas, como se muestra a continuación.
+ El iterador de a Datasetproduce DataElementinstancias, por ejemplo, los valores del diccionario en lugar de las claves que normalmente se obtienen al iterar a dict.
 \subsection{Lenguaje Utilizado}
 \begin{itemize}
 	\item Javascript y librerias:
