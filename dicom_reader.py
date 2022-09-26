@@ -120,7 +120,7 @@ def kdtree_closest_point(root, point, depth=0):
 # paths to data and save location
 filepath = './data/' # directory containing the dicom series
 dcmprefix = 'I' # Individual dicom file prefix before number
-firstdcm = dcmprefix + '45' # first dicom image to inspect metadata fields
+firstdcm = dcmprefix + '12' # first dicom image to inspect metadata fields
 newdir = './data-edited/' # directory to save new metadata fields
 
 # Find total number of dicom files in series
@@ -155,7 +155,7 @@ plt.imshow(mask, cmap='gray')  # set the color map to bone
 plt.show()
 # print(myPoints)
 kdtree = build_kdtree(myPoints)
-pivot = (250,250)
+pivot = (256,256)
 found = kdtree_closest_point(kdtree, pivot)
 found_distance = math.sqrt(distance_squared(pivot, found))
 
