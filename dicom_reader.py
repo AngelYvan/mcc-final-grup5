@@ -139,12 +139,10 @@ imageArray = ds.pixel_array
 # mask = np.identity(512)
 plt.imshow(imageArray, cmap=plt.cm.bone)  # set the color map to bone
 plt.show()
-# plt.imshow(mask, cmap='gray')  # set the color map to bone
-# plt.show()
 
-# [200][130]
-# 142
 mask = np.zeros((512,512))
+result = np.zeros((512,512))
+
 myPoints = []
 for x in range(len(imageArray)):
     for y in range(len(imageArray[x])):
@@ -153,11 +151,16 @@ for x in range(len(imageArray)):
             myPoints.append((x,y))
 plt.imshow(mask, cmap='gray')  # set the color map to bone
 plt.show()
-# print(myPoints)
-kdtree = build_kdtree(myPoints)
+
 pivot = (256,256)
+
+kdtree = build_kdtree(myPoints)
 found = kdtree_closest_point(kdtree, pivot)
 found_distance = math.sqrt(distance_squared(pivot, found))
-
 print("  Found:    %s (distance: %f)" % (found, found_distance))
+result[found[0],found[1]] = 1
+
+
+
+
 
