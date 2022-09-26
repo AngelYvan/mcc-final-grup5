@@ -19,3 +19,9 @@ Aplicacion del algoritmo KDTree en la lectura de imagenes DICOM para detección 
 - Estefany Pilar Huaman Colque
 - Eduardo Diaz Huayhuas
 - Gustavo Raul Manrique Fernandez
+
+## LINK DEL VIDEO
+
+Descarga desde Drive: https://drive.google.com/file/d/1XNyeXL5siB8A4KAjqWwGvXQ29AT0HvWq/view?usp=sharing
+
+Descarga Directa: https://bit.ly/3SjLke3
