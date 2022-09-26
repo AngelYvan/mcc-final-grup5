@@ -21,6 +21,7 @@
 \usepackage[spanish]{babel}
 \usepackage{times}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\csemail}{vmachacaa@unsa.edu.pe}
@@ -99,12 +100,15 @@ backgroundcolor=\color{gray75},
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
+
 \begin{document}
 	
 	\vspace*{10px}
 	
 	\begin{center}	
-		\fontsize{17}{17} \textbf{ Práctica \cspracnr}
+		\fontsize{17}{17} \textbf{ Práctica final }
 	\end{center}
 	%\centerline{\textbf{\underline{\Large Título: Informe de revisión del estado del arte}}}
 	%\vspace*{0.5cm}
@@ -126,7 +130,7 @@ backgroundcolor=\color{gray75},
 			\hline 
 			\textbf{PRÁCTICA} & \textbf{TEMA}  & \textbf{DURACIÓN}   \\
 			\hline 
-			\cspracnr & Proyecto Final & 3 horas   \\
+			final & Proyecto Final & 3 horas   \\
 			\hline 
 		\end{tabular}
 	\end{table}
@@ -144,7 +148,12 @@ backgroundcolor=\color{gray75},
 		\end{itemize}		
 	\end{itemize}
 	
+	Enlace GITHUB:
+	\url{	https://github.com/AngelYvan/mcc-final-grup5}
 	
+	
+	Enlace video:
+		\url{https://drive.google.com/drive/folders/1zWb3dDynwjV3xj4BUIvC2XCaOOXzeIY-?usp=sharing}
  
 	
 	%\clearpage
@@ -300,7 +309,7 @@ tomografía computerizada. Este programa trabaja con archivos DICOM (Digital Ima
 Communication in Medicine) que es el formato estándar para el procesamiento de este tipo de
 imágenes. En ella se puede encontrar versiones actualizadas del programa así como un manual para el usuario con explicaciones de las herramientas de las que dispone y otro manual para desarrolladores.
 
-En el diseño del código se ha trabajado contando como referencias las librerías “Medical Imaging Interaction Toolkit (MITK) debido a la facididad para el manejo de las imagenes en formatp DICOM,  con la finalidad de ofrecer una mejor interfaz.
+En el diseño del código se ha trabajado contando como referencia las librerías “Medical Imaging Interaction Toolkit (MITK) debido a la facididad para el manejo de las imagenes en formatp DICOM que se están utilizando.
 
 \begin{figure}[H]
 \centering
@@ -403,8 +412,10 @@ def kdtree_closest_point(root, point, depth=0):
 
 \end{lstlisting}
 
+
 \subsection{Output: Detectando las patologias}
 
+\begin{lstlisting}[style=C]
 # paths to data and save location
 filepath = './data/' # directory containing the dicom series
 dcmprefix = 'I' # Individual dicom file prefix before number
@@ -466,19 +477,31 @@ plt.imshow(result, cmap='gray')  # set the color map to bone
 plt.show()
 \end{lstlisting}
 
-
-
 	\section{Resultados}
+Como resultado podemos observar:
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{img/image01.png}
+\caption{lectura de la imagen dicom original}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{img/image02.png}
+\caption{imagen con transformación morfológica }
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{img/image03.png}
+\caption{imagen resultante con kdtree}
+\end{figure}
+
+	\section{Conclusiones}
 	\begin{itemize}
 		\item Se logró aplicar  un algoritmo computacional para la detección de patologias en imagenes DICOM
 		\item Se determinó la presencia de patologias en imagenes DICOM mediante el uso de algoritmos computacionales y basados en la escala Hounsfield
 		\end{itemize}
-		
-
-
-	\section{Conclusiones}
-
-
 	
-	
+
 \end{document}
