@@ -173,3 +173,6 @@ while found_distance < 35:
     found_distance = math.sqrt(distance_squared(pivot, found))
     # print("  Found:    %s (distance: %f)" % (found, found_distance))
     result[found[0],found[1]] = 1
+
+plt.imshow(result, cmap='gray')  # set the color map to bone
+plt.show()
