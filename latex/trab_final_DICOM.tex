@@ -225,6 +225,10 @@ modelo de objetos pydicom, descripción de clases, ejemplos
 conjunto de datos
 Dataset el objeto principal con el que trabajará directamente. Datasetenvuelve un diccionario, donde la clave es la etiqueta DICOM (como un BaseTagobjeto, que se describe a continuación) y el valor es la DataElementinstancia correspondiente (que también se describe a continuación). Implementa la mayoría de los métodos de dict, por lo que en su mayoría se comporta como un envuelto dict. Esto permite el acceso directo a los elementos de datos a través de sus etiquetas, como se muestra a continuación.
  El iterador de a Datasetproduce DataElementinstancias, por ejemplo, los valores del diccionario en lugar de las claves que normalmente se obtienen al iterar a dict.
+ Para la implementación del estándar DICOM, Python cuanta con la librería llamada pynetDicom (‘Documentación de pynetdicom - documentación de pynetdicom 1.4.1’, n.d.),
+la cual facilita la comunicación entre los usuarios (SCU) y los proveedores (SCP), adicional a esto, permite llevar a cabo la ejecución de diversos servicios, entre los que se encuentran: C-Echo, C-Storage, C-Find, C-Get, C-Move, C-Cancel, Modality Worklist.
+(Pianykh, 2012) Pydicom también permite la lectura de las imágenes médicas y esto es uno de sus más grandes fuertes, debido a que estas imágenes en formato DICOM estas codificadas, lo que las hace de difícil acceso o procesamiento si no se cuenta con la aplicación o programa
+adecuado para su decodificación.
 \subsection{Lenguaje Utilizado}
 \begin{itemize}
 	\item Javascript y librerias:
