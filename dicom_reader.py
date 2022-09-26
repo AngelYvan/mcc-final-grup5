@@ -160,7 +160,16 @@ found_distance = math.sqrt(distance_squared(pivot, found))
 print("  Found:    %s (distance: %f)" % (found, found_distance))
 result[found[0],found[1]] = 1
 
-
-
-
-
+while found_distance < 35:
+    imageArray[found[0],found[1]] = 0
+    myPoints = []
+    for x in range(len(imageArray)):
+        for y in range(len(imageArray[x])):
+            if imageArray[x,y] > 20 and imageArray[x,y] < 300:
+                myPoints.append((x,y))
+    kdtree = build_kdtree(myPoints)
+    found = kdtree_closest_point(kdtree, pivot)
+    print(found)
+    found_distance = math.sqrt(distance_squared(pivot, found))
+    # print("  Found:    %s (distance: %f)" % (found, found_distance))
+    result[found[0],found[1]] = 1
